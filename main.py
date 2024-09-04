@@ -119,7 +119,7 @@ def add_sand(x, y, color):
 
 def clear_sand():
     global grid
-    grid = [[0.0 for _ in range(columnCount)] for _ in range(rowCount)]
+    grid = [[0.0 for _ in range(rowCount)] for _ in range(columnCount)]
 
 
 def update_hue():
@@ -173,6 +173,8 @@ def main():
                     mouse_dragging = True
                     pos = pygame.mouse.get_pos()
                     update_grid(pos)
+                if event.button == 3:
+                    clear_sand()
 
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
